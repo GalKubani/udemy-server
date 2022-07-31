@@ -53,6 +53,7 @@ router.post('/users/login', async (req: Request, res: Response) => {
         }
       } catch (error: any) {
         if (error.message === 'EMAIL_NOT_FOUND') {
+          console.log(error);
           res.status(404).send(error.message);
         } else res.status(400).send('INVALID_PASSWORD');
       }
